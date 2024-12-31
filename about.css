@@ -1,0 +1,222 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    background-color: black;
+}
+nav{
+    width: 100%;
+    height: 10vh;
+    position: sticky;
+}
+.nav-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.logo{
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.logo span{
+    color: #a40000;
+    text-shadow: 0 0 10px #a40000;
+}
+.hamburg,
+.cancel{
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: white;
+    display: none;
+    font-size: clamp(2.5rem, 0.5rem + 5vw, 3rem);
+}
+.nav-container .links{
+    display: flex;
+}
+.nav-container .links a{
+    position: relative;
+    font-size: 1.2rem;
+    color: white;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: 550;
+    transition: 0.3s linear;
+}
+.nav-container .links a::before{
+    position: absolute;
+    content: "";
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: #a40000;
+    transition: 0.2s linear;
+}
+.nav-container .links a:hover::before{
+    width: 100%;
+}
+.nav-container .links a:hover{
+    color: #a40000;
+}
+.dropdown{
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    transform: translateY(-500px);
+    width: 100%;
+    height: auto;
+    backdrop-filter: blur(4px) brightness(40%);
+    box-shadow:  0 0 20px black;
+    transition: 0.2s linear;
+}
+.dropdown .links a{
+    display: flex;
+    color: white;
+    text-decoration: none;
+    justify-content: center;
+    padding: 15px 0;
+    align-items: center;
+    transition: 0.2s linear;
+}
+.dropdown .links a:hover{
+    background-color: #a40000;
+}
+section{
+    width: 100%;
+    height: 90vh;
+    background-image: url(bg.gif);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+@media (max-width:884px) {
+    nav .logo{
+        position: absolute;
+        top: 16px;
+        left: 15px;
+        font-size: 1.5rem;
+    }
+    .main-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .nav-container .links{
+        display: none;
+    }
+    .hamburg,
+    .cancel{
+        display: block;
+    }
+}
+
+#about {
+    width: 100%;
+    padding: 50px 0;
+    color: white;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.about-content {
+    width: 70%;
+    text-align: center;
+}
+
+.about-content h2 {
+    font-size: 2rem;
+    color: #a40000;
+    text-shadow: 0 0 10px #a40000;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.learn-more {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #a40000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.learn-more:hover {
+    background-color: white;
+    color: #a40000;
+    box-shadow: 0 0 10px #a40000;
+    transform: scale(1.05);
+}
+
+.skills {
+    margin-top: 30px;
+    text-align: left;
+}
+
+.skills h3 {
+    margin-bottom: 15px;
+    color: #a40000;
+}
+
+.skill {
+    margin-bottom: 15px;
+}
+
+.skill label {
+    font-size: 1rem;
+    color: white;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.progress-bar {
+    background-color: #555;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 20px;
+}
+
+.progress {
+    background-color: #a40000;
+    color: white;
+    height: 100%;
+    text-align: right;
+    padding-right: 5px;
+    line-height: 20px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    box-shadow: 0 0 5px #a40000;
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        width: 90%;
+    }
+}
